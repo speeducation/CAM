@@ -1,1 +1,3 @@
 camenv/
+*.pyc
+.idea/
