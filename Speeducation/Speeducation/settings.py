@@ -55,12 +55,12 @@ ALLOWED_HOSTS = []
 # CONFIGURACION PARA BASE DE DATOS LOCAL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'CAM',
-        'USER' : 'admin',
-        'PASSWORD' : 'pass',
-        'HOST' : 'localhost',
-        'PORT' : '5432',
+        'ENGINE':   'django.db.backends.postgresql_psycopg2',
+        'NAME':     'CAM',
+        'USER':     'admin',
+        'PASSWORD': 'pass',
+        'HOST':     'localhost',
+        'PORT':     '5432',
     }
 }
 
