@@ -1,21 +1,10 @@
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+#CONFIGURACION BASE.py
 from unipath import Path
 BASE_DIR = Path(__file__).ancestor(2)
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '8ce%wc$91p%8mx)%rd=bgo68^5b9eny0qf^f5rbslbiz@*9h*2'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
-
+#TUPLA PARA INDICAR APPS INSTALADAS PROPIAS DE DJANGO
 DJANGO_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -25,10 +14,12 @@ DJANGO_APPS = (
     'django.contrib.staticfiles',
 )
 
+#TUPLA PARA INDICAR APPS INSTALADAS PROPIAS DE TERCEROS
 THIRDPARTY_APPS = (
     'south',
 )
 
+#TUPLA PARA INDICAR APPS INSTALADAS PROPIAS DEL PROYECTO
 LOCAL_APPS = (
     'apps.base',
 )
@@ -50,24 +41,30 @@ ROOT_URLCONF = 'Speeducation.urls'
 
 WSGI_APPLICATION = 'Speeducation.wsgi.application'
 
+TEMPLATE_DIRS = [BASE_DIR.child('templates')]
 
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+#######################################################################################################################
 
+# CONFIGURACION LOCAL.py
+DEBUG = True
+
+TEMPLATE_DEBUG = True
+
+ALLOWED_HOSTS = []
+
+# CONFIGURACION PARA BASE DE DATOS LOCAL
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'CAM',
-        'USER' : 'admin',
-        'PASSWORD' : 'pass',
-        'HOST' : 'localhost',
-        'PORT' : '5432',
+        'ENGINE':   'django.db.backends.postgresql_psycopg2',
+        'NAME':     'CAM',
+        'USER':     'admin',
+        'PASSWORD': 'pass',
+        'HOST':     'localhost',
+        'PORT':     '5432',
     }
 }
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -78,9 +75,5 @@ USE_L10N = True
 
 USE_TZ = True
 
-TEMPLATE_DIRS = [BASE_DIR.child('templates')]
-
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
 STATIC_URL = '/static/'
