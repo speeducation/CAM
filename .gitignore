@@ -1,3 +1,4 @@
 camenv/
 *.pyc
 .idea/
+.Speeducation/apps/users/migrations
