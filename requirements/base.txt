@@ -2,3 +2,4 @@ Django==1.6.2
 psycopg2==2.6.1
 Unipath==1.1
 South==1.0.2
+django-bower==5.0.4
