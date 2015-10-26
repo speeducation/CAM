@@ -1,13 +1,16 @@
 #CONFIGURACION BASE.py
 from unipath import Path
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
 BASE_DIR = Path(__file__).ancestor(2)
 
 SECRET_KEY = '8ce%wc$91p%8mx)%rd=bgo68^5b9eny0qf^f5rbslbiz@*9h*2'
 
 #TUPLA PARA INDICAR APPS INSTALADAS PROPIAS DE DJANGO
 DJANGO_APPS = (
-    'django_admin_bootstrapped.bootstrap3',
-    'django_admin_bootstrapped',
+    #'django_admin_bootstrapped.bootstrap3',
+    #'django_admin_bootstrapped',
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -24,6 +27,9 @@ THIRDPARTY_APPS = (
 #TUPLA PARA INDICAR APPS INSTALADAS PROPIAS DEL PROYECTO
 LOCAL_APPS = (
     'apps.base',
+    #'apps.users',
+    'apps.alumnos',
+    'apps.evaluaciones',
 )
 
 # Application definition
@@ -44,6 +50,10 @@ ROOT_URLCONF = 'Speeducation.urls'
 WSGI_APPLICATION = 'Speeducation.wsgi.application'
 
 TEMPLATE_DIRS = [BASE_DIR.child('templates')]
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+)
 
 #######################################################################################################################
 
@@ -79,3 +89,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'CAM',
+    'SHOW_REQUIRED_ASTERISK': True,
+    'MENU_OPEN_FIRST_CHILD': True,
+
+    'MENU_ICONS': {
+        'sites': 'icon-leaf',
+        'auth': 'icon-lock',
+    },
+
+    'LIST_PER_PAGE': 20
+}
