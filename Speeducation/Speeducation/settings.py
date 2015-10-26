@@ -6,6 +6,8 @@ SECRET_KEY = '8ce%wc$91p%8mx)%rd=bgo68^5b9eny0qf^f5rbslbiz@*9h*2'
 
 #TUPLA PARA INDICAR APPS INSTALADAS PROPIAS DE DJANGO
 DJANGO_APPS = (
+    'django_admin_bootstrapped.bootstrap3',
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
